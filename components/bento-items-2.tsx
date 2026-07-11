@@ -356,7 +356,7 @@ export function Links2({ mode = "default", ...props }: BentoCardProps) {
 								custom={{ delay: delay + index * 0.15, rotate: link.rotate }}
 								data-cursor="social"
               >
-                <div className="flex flex-row items-center justify-start gap-5 w-full m-6">
+                <div className="flex flex-row items-center justify-start gap-5 w-full m-3 md:m-5 lg:m-6">
 								<motion.div
 									variants={iconVariants}
 									custom={{ delay: delay + index * 0.15, rotate: link.rotate }}
@@ -364,7 +364,7 @@ export function Links2({ mode = "default", ...props }: BentoCardProps) {
 								>
                   <Icon className="size-7 sm:size-8 2xl:size-14" />
                   </motion.div>
-                   <p className="text-2xl">{ link.label}</p>
+                   <p className="md:text-xl 2xl:text-2xl">{ link.label}</p>
                 </div>
 							</motion.a>
 						);

@@ -63,16 +63,18 @@ const colsForSpan = {
   1: 2,
   2: 5,
   3: 8,
+  4: 10,
 } as const;
 
 function patternUrl(
   cols: number,
+  rows: number,
   seed: number,
   palette: typeof palettes[number]
 ) {
   const params = new URLSearchParams({
     cols: String(cols),
-    rows: "2",
+    rows: String(rows),
     seed: String(seed),
     bg: palette.bg,
     colorA: palette.colorA,
@@ -88,7 +90,7 @@ function patternUrl(
   return `/api/svg?${params}`;
 }
 
-export type patternLen = 1 | 2 | 3;
+export type patternLen = 1 | 2 | 3 | 4;
 
 export function getPattern(name: string, colSpan: patternLen): string {
   let hash = 0;
@@ -104,7 +106,24 @@ export function getPattern(name: string, colSpan: patternLen): string {
   const palette = palettes[index % palettes.length];
   const seed = seeds[Math.floor(index / palettes.length)];
 
-  return patternUrl(cols, seed, palette);
+  return patternUrl(cols, 2, seed, palette);
+}
+
+export function getPattern1R(name: string, colSpan: patternLen): string {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = (hash * 31 + name.charCodeAt(i)) >>> 0;
+  }
+
+  const cols = colsForSpan[colSpan];
+
+  const combinations = palettes.length * seeds.length;
+  const index = hash % combinations;
+
+  const palette = palettes[index % palettes.length];
+  const seed = seeds[Math.floor(index / palettes.length)];
+
+  return patternUrl(cols, 1, seed, palette);
 }
 export function getColor(name: string): string {
   let hash = 0;

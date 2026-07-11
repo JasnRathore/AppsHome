@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { BentoGridItem, BentoGridItemProps } from "./bento";
-import { getPastelColor, type patternLen, getPattern } from "@/lib/design";
-
-type CardMode = "default" | "compact";
+import { getPastelColor, type patternLen, getPattern, getPattern1R } from "@/lib/design";
 
 type AppCardProps = BentoGridItemProps & {
 	mode?: CardMode;
@@ -89,6 +87,8 @@ const tagVariants = {
 	},
 };
 
+type CardMode = "default" | "compact" | "super-compact";
+
 export function AppItem({
 	mode = "default",
 	name = "hello",
@@ -102,6 +102,9 @@ export function AppItem({
 	rowSpan,
 	...props
 }: AppCardProps) {
+	const isCompact = mode === "compact" || mode === "super-compact";
+	const isSuperCompact = mode === "super-compact";
+
 	return (
 		<BentoGridItem
 			{...props}
@@ -109,129 +112,198 @@ export function AppItem({
 			rowSpan={rowSpan}
 			className={`flex ${
 				orientation === "top" ? "flex-col" : "flex-row"
-			} 2xl:p-7 gap-3 sm:gap-4 2xl:gap-4`}
+			} ${
+				isCompact
+					? "p-3 gap-2"
+					: "2xl:p-7 gap-3 sm:gap-4 2xl:gap-4"
+			}`}
 		>
-      {(delay: number) => (
-			<>
-			{rowSpan === 2 && (
-				<motion.div
-					initial="initial"
-					animate="animate"
-					variants={mediaVariants}
-					custom={{ delay }}
-					className="text-transparent rounded-[12px] w-full h-1/2 bg-cover bg-center bg-no-repeat"
-					style={{
-						backgroundImage: `url(${getPattern(
-							name,
-							colSpan as patternLen
-						)})`,
-					}}
-				>
-					d
-				</motion.div>
-			)}
-
-			{rowSpan !== 2 &&
-			(colSpan as number) >= 2 &&
-			orientation !== "top" && (
-				<motion.div
-					initial="initial"
-					animate="animate"
-					variants={mediaVariants}
-					custom={{ delay }}
-					className="text-transparent rounded-[12px] w-1/3 h-full bg-cover bg-center bg-no-repeat shrink-0"
-					style={{
-						backgroundImage: `url(${getPattern(
-							name,
-							Math.floor((colSpan as number) / 2) as patternLen
-						)})`,
-					}}
-				>
-					d
-				</motion.div>
-			)}
-
-			<motion.div
-				initial="initial"
-				animate="animate"
-				className="flex flex-col gap-4"
-			>
-				<div className="flex gap-3">
-					{tags.map((value, index) => (
+			{(delay: number) => (
+				<>
+					{rowSpan === 2 && (
 						<motion.div
-							key={value}
-							variants={tagVariants}
-							custom={{
-								delay: delay + index * 0.08 + 0.5,
-							}}
-							className="px-2 py-1 rounded-[12px] text-black"
+							initial="initial"
+							animate="animate"
+							variants={mediaVariants}
+							custom={{ delay }}
+							className={`text-transparent rounded-[12px] w-full bg-cover bg-center bg-no-repeat ${
+								isCompact ? "h-48" : "h-1/2"
+							}`}
 							style={{
-								backgroundColor: getPastelColor(value),
+								backgroundImage: `url(${getPattern(
+									name,
+									colSpan as patternLen
+								)})`,
 							}}
-						>
-							{value}
-						</motion.div>
-					))}
-				</div>
+						/>
+          )}
+					{isSuperCompact && (
+						<motion.div
+							initial="initial"
+							animate="animate"
+							variants={mediaVariants}
+							custom={{ delay }}
+							className={`text-transparent rounded-[12px] w-full bg-cover bg-center bg-no-repeat h-14`}
+							style={{
+								backgroundImage: `url(${getPattern1R(
+									name,
+									(colSpan as number ) * 2  as patternLen
+								)})`,
+							}}
+						/>
+					)}
 
-				<motion.div
-					variants={contentVariants}
-					custom={{
-						delay: delay + tags.length * 0.08,
-					}}
-					className="flex justify-between"
-				>
-					<h1 className="text-3xl font-sans underline tracking-wide">
-						{name}
-					</h1>
-
-					<div className="flex gap-3">
-						{videoLink && (
-							<motion.a
-							data-cursor="pointer-invert"
-								variants={buttonVariants}
-								custom={{
-									delay: delay + 0.25,
+					{rowSpan !== 2 &&
+						(colSpan as number) >= 2 &&
+						orientation !== "top" && (
+							<motion.div
+								initial="initial"
+								animate="animate"
+								variants={mediaVariants}
+								custom={{ delay }}
+								className={`text-transparent rounded-[12px] bg-cover bg-center bg-no-repeat shrink-0 ${
+									isCompact
+										? "w-1/4 h-full"
+										: "w-1/3 h-full"
+								}`}
+								style={{
+									backgroundImage: `url(${getPattern(
+										name,
+										Math.floor(
+											(colSpan as number) / 2
+										) as patternLen
+									)})`,
 								}}
-								href={videoLink}
-								target="_blank"
-                    rel="noopener noreferrer"
-                    							className="inline-flex items-center gap-2 rounded-[10px] bg-black dark:bg-white px-4 py-2 text-sm text-white dark:text-black hover:transition-scale duration-75 ease-out hover:scale-105"
-							>
-								Video Demo <ArrowUpRightIcon size={22} />
-							</motion.a>
+							/>
 						)}
 
-						{link && (
-                  <motion.a
-                    data-cursor="pointer-invert"
-								variants={buttonVariants}
-								custom={{
-									delay: delay + 0.35,
-								}}
-								href={link}
-								target="_blank"
-								rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-[10px] bg-black dark:bg-white px-4 py-2 text-sm text-white dark:text-black hover:transition-scale duration-75 ease-out hover:scale-105"
-                  >
-								Visit <ArrowUpRightIcon size={22} />
-							</motion.a>
-						)}
-					</div>
-				</motion.div>
-
-				{description && (
-					<motion.p
-						variants={contentVariants}
-						custom={{
-							delay: delay + 0.45,
-						}}
-						className="text-sm text-muted-foreground"
+					<motion.div
+						initial="initial"
+						animate="animate"
+						className={`flex flex-col ${
+							isCompact ? "gap-2" : "gap-4"
+						}`}
 					>
-						{description}
-					</motion.p>
-				)}
-			</motion.div> </>)}
+						{tags.length > 0 && !isSuperCompact && (
+							<div className="flex gap-2 flex-wrap">
+								{tags.map((value, index) => (
+									<motion.div
+										key={value}
+										variants={tagVariants}
+										custom={{
+											delay:
+												delay +
+												index *
+													(isCompact
+														? 0.04
+														: 0.08) +
+												0.5,
+										}}
+										className={`rounded-[12px] text-black ${
+											isCompact
+												? "px-1.5 py-0.5 text-xs"
+												: "px-2 py-1"
+										}`}
+										style={{
+											backgroundColor:
+												getPastelColor(value),
+										}}
+									>
+										{value}
+									</motion.div>
+								))}
+							</div>
+						)}
+
+						<motion.div
+							variants={contentVariants}
+							custom={{
+								delay:
+									delay +
+									(isSuperCompact
+										? 0
+										: tags.length *
+										  (isCompact ? 0.04 : 0.08)),
+							}}
+							className="flex justify-between items-center gap-2"
+						>
+							<h1
+								className={`font-sans underline tracking-wide ${
+									isCompact
+										? "text-xl"
+										: "text-3xl"
+								}`}
+							>
+								{name}
+							</h1>
+
+							<div className="flex gap-2">
+								{videoLink && (
+									<motion.a
+										data-cursor="pointer-invert"
+										variants={buttonVariants}
+										custom={{
+											delay: delay + 0.2,
+										}}
+										href={videoLink}
+										target="_blank"
+										rel="noopener noreferrer"
+										className={`inline-flex items-center gap-1 rounded-[10px] bg-black dark:bg-white text-white dark:text-black hover:scale-105 transition ${
+											isCompact
+												? "px-2 py-1 text-xs"
+												: "px-4 py-2 text-sm"
+										}`}
+									>
+										{isCompact ? "Video" : "Video Demo"}
+										<ArrowUpRightIcon
+											size={isCompact ? 16 : 22}
+										/>
+									</motion.a>
+								)}
+
+								{link && (
+									<motion.a
+										data-cursor="pointer-invert"
+										variants={buttonVariants}
+										custom={{
+											delay: delay + 0.3,
+										}}
+										href={link}
+										target="_blank"
+										rel="noopener noreferrer"
+										className={`inline-flex items-center gap-1 rounded-[10px] bg-black dark:bg-white text-white dark:text-black hover:scale-105 transition ${
+											isCompact
+												? "px-2 py-1 text-xs"
+												: "px-4 py-2 text-sm"
+										}`}
+									>
+										Visit
+										<ArrowUpRightIcon
+											size={isCompact ? 16 : 22}
+										/>
+									</motion.a>
+								)}
+							</div>
+						</motion.div>
+
+						{description && (
+							<motion.p
+								variants={contentVariants}
+								custom={{
+									delay: delay + 0.45,
+								}}
+								className={`text-muted-foreground ${
+									isCompact
+										? "text-xs line-clamp-2"
+										: "text-sm"
+								}`}
+							>
+								{description}
+							</motion.p>
+						)}
+					</motion.div>
+				</>
+			)}
 		</BentoGridItem>
 	);
 }

@@ -154,7 +154,9 @@ function mirrorCorner(c: Corner) {
 }
 
 function transformShape(s: TemplateShape, mirror: boolean, k: number): TemplateShape {
-  let { x, y, w, h, type, corner, role } = s;
+  let { x, y, w, h, type, corner, } = s;
+  const { role } = s;
+
   if (mirror) {
     x = BOX - x - w;
     if (type === "quarter" && corner) corner = mirrorCorner(corner);

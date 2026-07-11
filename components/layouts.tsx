@@ -229,7 +229,7 @@ export function Max() {
           rowHeight="1fr"
         >
           {/* Row 1 */}
-          <AppItem name={"SuFumi"} tags={["Web","Docker", "SpringBoot", "PostgreSQL", "NodeMailer"]} orientation="top" colSpan={3} rowSpan={2} />
+          <AppItem name={"Su-Fumi"} tags={["Web","Docker", "SpringBoot", "PostgreSQL", "NodeMailer"]} link="https://sufumi.vercel.app" description="A venture focused on building CLI tools that streamline developer workflows and improve productivity with modern web technologies." orientation="top" colSpan={3} rowSpan={2} />
 
         </BentoGrid>
         </div>

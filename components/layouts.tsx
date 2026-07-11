@@ -49,11 +49,6 @@ const mobileLinks = [
     Icon: GitHubLogoIcon,
   },
   {
-    href: "https://www.instagram.com/killermarine_studios/",
-    label: "Instagram",
-    Icon: InstagramLogoIcon,
-  },
-  {
     href: "mailto:jasn.p.rathore@gmail.com",
     label: "Email",
     Icon: EnvelopeClosedIcon,
@@ -145,8 +140,23 @@ export function Mobile2X() {
     <div className="min-h-screen bg-mobile-bg text-mobile-text md:hidden">
       <div className="mx-auto w-full max-w-[390px] px-3 pt-2 pb-6 font-mono sm:px-4">
         <MobileHeader page="home" />
-        <div className="mt-5 grid grid-cols-2 gap-4">
+
+        <div className="mt-5 grid grid-cols-2 gap-2">
           <Intro className="col-span-2" colSpan={2} mode="compact"></Intro>
+          <div className="col-span-2">
+            <div className="grid grid-cols-5 gap-1">
+              {mobileLinks.map(({ href, label, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  className="flex aspect-square items-center justify-center rounded-[1.25rem] border border-mobile-border bg-mobile-surface-strong text-mobile-text transition-colors hover:bg-mobile-surface active:scale-95"
+                  aria-label={label}
+                >
+                  <Icon className="h-8 w-8" />
+                </a>
+              ))}
+            </div>
+          </div>
           <AppItem orientation="top" mode="super-compact" name={"Appointley"} tags={["Web", "Docker", "SpringBoot", "PostgreSQL", "NodeMailer"]} videoLink="sd" link="https://appointley.vercel.app/" description="A toy scheduling platform that enables users to manage bookings, set recurring availability, coordinate team workflows, and automate appointment reminders. It demonstrates core scheduling features such as appointment management, availability handling, and conflict-free coordination." colSpan={2} rowSpan={1} />
           <AppItem name={"MonkTimer "} mode="super-compact" tags={["Productivity", "Web", "Vite"]} link="https://monktimer.vercel.app/" description="An ad-free productivity timer for students, inspired by Zhenya Rynzhuk, designed to help users stay focused & manage study sessions." orientation="top" colSpan={2} rowSpan={1} />
           <AppItem colSpan={2} rowSpan={1} mode="super-compact" name="FolioPage" tags={["Web", "Service", "NextJS", "Turso"]} videoLink="sd" link="https://foliopage.vercel.app" description="An actively developed portfolio platform for students and early-career developers, focused on simplifying the creation and showcasing of professional profiles with zero-cost hosting and minimal setup." />

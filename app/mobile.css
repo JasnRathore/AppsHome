@@ -1,0 +1,44 @@
+:root {
+  --mobile-bg: #f3efe6;
+  --mobile-surface: rgba(255, 255, 255, 0.72);
+  --mobile-surface-strong: rgba(255, 255, 255, 0.92);
+  --mobile-border: rgba(17, 17, 17, 0.08);
+  --mobile-text: #121212;
+  --mobile-text-soft: rgba(18, 18, 18, 0.56);
+  --mobile-chip-bg: rgba(255, 255, 255, 0.88);
+  --mobile-chip-pill: rgba(17, 17, 17, 0.08);
+  --mobile-cream: #f4ecd2;
+  --mobile-coral: #f07a59;
+  --mobile-yellow: #52b2cf;
+  --mobile-celadon: #af125a;
+}
+
+.dark {
+  --mobile-bg: #050505;
+  --mobile-surface: rgba(255, 255, 255, 0.04);
+  --mobile-surface-strong: rgba(255, 255, 255, 0.07);
+  --mobile-border: rgba(255, 255, 255, 0.1);
+  --mobile-text: #ffffff;
+  --mobile-text-soft: rgba(255, 255, 255, 0.62);
+  --mobile-chip-bg: rgba(255, 255, 255, 0.06);
+  --mobile-chip-pill: rgba(255, 255, 255, 0.1);
+  --mobile-cream: #f4ecd2;
+  --mobile-coral: #f07a59;
+  --mobile-yellow: #52b2cf;
+  --mobile-celadon:#af125a;
+}
+
+@theme {
+  --color-mobile-bg: var(--mobile-bg);
+  --color-mobile-surface: var(--mobile-surface);
+  --color-mobile-surface-strong: var(--mobile-surface-strong);
+  --color-mobile-border: var(--mobile-border);
+  --color-mobile-text: var(--mobile-text);
+  --color-mobile-text-soft: var(--mobile-text-soft);
+  --color-mobile-chip-bg: var(--mobile-chip-bg);
+  --color-mobile-chip-pill: var(--mobile-chip-pill);
+  --color-mobile-cream: var(--mobile-cream);
+  --color-mobile-coral: var(--mobile-coral);
+  --color-mobile-yellow: var(--mobile-yellow);
+  --color-mobile-celadon: var(--mobile-celadon);
+}

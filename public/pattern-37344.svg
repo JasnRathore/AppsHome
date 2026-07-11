@@ -1,0 +1,22 @@
+<svg viewBox="0 0 1104 504" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1104" height="504" fill="#0a231e"/>
+  <path d="M 192,192 L 72,192 A 120,120 0 0 1 192,72 Z" fill="#2bb673"/>
+  <path d="M 192,192 L 192,312 A 120,120 0 0 1 72,192 Z" fill="#1c5c48"/>
+  <path d="M 192,192 L 192,72 A 120,120 0 0 1 312,192 Z" fill="#1c5c48"/>
+  <path d="M 192,192 L 312,192 A 120,120 0 0 1 192,312 Z" fill="#2bb673"/>
+  <circle cx="372" cy="132" r="60" fill="#1c5c48"/>
+  <rect x="432" y="72" width="120" height="120" rx="0" ry="0" fill="#1c5c48"/>
+  <rect x="312" y="192" width="120" height="120" rx="0" ry="0" fill="#2bb673"/>
+  <circle cx="492" cy="252" r="60" fill="#2bb673"/>
+  <rect x="552" y="192" width="240" height="120" rx="0" ry="0" fill="#2bb673"/>
+  <rect x="552" y="72" width="240" height="120" rx="0" ry="0" fill="#1c5c48"/>
+  <rect x="792" y="72" width="120" height="240" rx="60" ry="60" fill="#1c5c48"/>
+  <rect x="912" y="72" width="120" height="240" rx="60" ry="60" fill="#2bb673"/>
+  <path d="M 72,432 L 72,312 A 120,120 0 0 1 192,432 Z" fill="#2bb673"/>
+  <rect x="192" y="312" width="120" height="120" rx="0" ry="0" fill="#1c5c48"/>
+  <rect x="312" y="312" width="240" height="120" rx="60" ry="60" fill="#2bb673"/>
+  <circle cx="612" cy="372" r="60" fill="#1c5c48"/>
+  <path d="M 672,312 L 792,312 A 120,120 0 0 1 672,432 Z" fill="#2bb673"/>
+  <path d="M 792,312 A 60,60 0 0 0 912,312 Z" fill="#1c5c48"/>
+  <path d="M 912,312 A 60,60 0 0 1 912,432 Z" fill="#1c5c48"/>
+</svg>

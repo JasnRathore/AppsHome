@@ -1,0 +1,18 @@
+<svg viewBox="0 0 988.8 508.8" xmlns="http://www.w3.org/2000/svg">
+  <rect width="988.8" height="508.8" fill="#0a231e"/>
+  <path d="M 134.4,134.4 L 14.400000000000006,134.4 A 120,120 0 0 1 134.4,14.400000000000006 Z" fill="#1c5c48"/>
+  <circle cx="194.4" cy="194.4" r="60" fill="#2bb673"/>
+  <rect x="254.4" y="14.399999999999999" width="240" height="240" rx="100.8" ry="100.8" fill="#2bb673"/>
+  <rect x="494.4" y="14.399999999999999" width="240" height="240" rx="100.8" ry="100.8" fill="#1c5c48"/>
+  <rect x="854.4" y="134.4" width="120" height="120" rx="0" ry="0" fill="#2bb673"/>
+  <path d="M 854.4,134.4 L 734.4,134.4 A 120,120 0 0 1 854.4,14.400000000000006 Z" fill="#1c5c48"/>
+  <path d="M 254.4,254.4 L 254.4,494.4 A 240,240 0 0 1 14.400000000000006,254.4 Z" fill="#1c5c48"/>
+  <circle cx="314.4" cy="314.4" r="60" fill="#1c5c48"/>
+  <circle cx="314.4" cy="434.4" r="60" fill="#2bb673"/>
+  <circle cx="434.4" cy="314.4" r="60" fill="#2bb673"/>
+  <circle cx="434.4" cy="434.4" r="60" fill="#1c5c48"/>
+  <rect x="494.4" y="254.4" width="120" height="240" rx="60" ry="60" fill="#2bb673"/>
+  <rect x="614.4" y="254.4" width="120" height="240" rx="60" ry="60" fill="#1c5c48"/>
+  <rect x="734.4" y="254.4" width="240" height="120" rx="60" ry="60" fill="#2bb673"/>
+  <rect x="734.4" y="374.4" width="240" height="120" rx="60" ry="60" fill="#1c5c48"/>
+</svg>

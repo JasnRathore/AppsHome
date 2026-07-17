@@ -125,7 +125,6 @@ export function Mid() {
         <AppItem name={"MonkTimer "} mode="compact" tags={["Productivity", "Web", "Vite"]} link="https://monktimer.vercel.app/" description="An ad-free productivity timer for students, inspired by Zhenya Rynzhuk, designed to help users stay focused & manage study sessions." orientation="left" colSpan={2} rowSpan={1} />
         <AppItem colSpan={2} rowSpan={2} mode="compact" name="FolioPage" tags={["Web", "Service", "NextJS", "Turso"]} videoLink="sd" link="https://foliopage.vercel.app" description="An actively developed portfolio platform for students and early-career developers, focused on simplifying the creation and showcasing of professional profiles with zero-cost hosting and minimal setup." />
         <AppItem name={"Su-Fumi"} mode="compact" tags={["CLi", "Desktop", "Windows", "Go"]} link="https://sufumi.vercel.app" description="A venture focused on building CLI tools that streamline developer workflows and improve productivity with modern web technologies." orientation="right" colSpan={2} rowSpan={1} />
-
       </BentoGrid>
       <MobileTechModal
         selectedTech={selectedTech}

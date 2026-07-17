@@ -76,7 +76,7 @@ export function Max() {
         rowHeight="1fr"
       >
         {/* Row 1 */}
-        <AppItem name={"Appointley"} tags={["Web","Docker", "SpringBoot", "PostgreSQL", "NodeMailer"]} videoLink="sd" link="https://appointley.vercel.app/" description="A toy scheduling platform that enables users to manage bookings, set recurring availability, coordinate team workflows, and automate appointment reminders. It demonstrates core scheduling features such as appointment management, availability handling, and conflict-free coordination.
+        <AppItem name={"Appointley"} tags={["Web","Docker", "SpringBoot", "PostgreSQL", "NodeMailer"]} videoLink="sd" link="https://demos.jasnrathore.fun/appointley" description="A toy scheduling platform that enables users to manage bookings, set recurring availability, coordinate team workflows, and automate appointment reminders. It demonstrates core scheduling features such as appointment management, availability handling, and conflict-free coordination.
 " orientation="top" colSpan={3} rowSpan={2} />
         <ThemeControl colSpan={1} rowSpan={1} />
         <Intro colSpan={2} rowSpan={1} />
@@ -118,7 +118,7 @@ export function Mid() {
       >
         <Intro colSpan={3} rowSpan={1} mode="compact" />
         <ThemeControl colSpan={1} rowSpan={1} />
-        <AppItem mode="compact" name={"Appointley"} tags={["Web","Docker", "SpringBoot", "PostgreSQL", "NodeMailer"]} videoLink="sd" link="https://appointley.vercel.app/" description="A toy scheduling platform that enables users to manage bookings, set recurring availability, coordinate team workflows, and automate appointment reminders. It demonstrates core scheduling features such as appointment management, availability handling, and conflict-free coordination.
+        <AppItem mode="compact" name={"Appointley"} tags={["Web","Docker", "SpringBoot", "PostgreSQL", "NodeMailer"]} videoLink="sd" link="https://demos.jasnrathore.fun/appointley/" description="A toy scheduling platform that enables users to manage bookings, set recurring availability, coordinate team workflows, and automate appointment reminders. It demonstrates core scheduling features such as appointment management, availability handling, and conflict-free coordination.
 " orientation="top" colSpan={3} rowSpan={2} />
         <Links colSpan={1} rowSpan={1} />
         <Links2 colSpan={1} rowSpan={1} />
@@ -157,7 +157,7 @@ export function Mobile2X() {
               ))}
             </div>
           </div>
-          <AppItem orientation="top" mode="super-compact" name={"Appointley"} tags={["Web", "Docker", "SpringBoot", "PostgreSQL", "NodeMailer"]} videoLink="sd" link="https://appointley.vercel.app/" description="A toy scheduling platform that enables users to manage bookings, set recurring availability, coordinate team workflows, and automate appointment reminders. It demonstrates core scheduling features such as appointment management, availability handling, and conflict-free coordination." colSpan={2} rowSpan={1} />
+          <AppItem orientation="top" mode="super-compact" name={"Appointley"} tags={["Web", "Docker", "SpringBoot", "PostgreSQL", "NodeMailer"]} videoLink="sd" link="https://demos.jasnrathore.fun/appointley" description="A toy scheduling platform that enables users to manage bookings, set recurring availability, coordinate team workflows, and automate appointment reminders. It demonstrates core scheduling features such as appointment management, availability handling, and conflict-free coordination." colSpan={2} rowSpan={1} />
           <AppItem name={"MonkTimer "} mode="super-compact" tags={["Productivity", "Web", "Vite"]} link="https://monktimer.vercel.app/" description="An ad-free productivity timer for students, inspired by Zhenya Rynzhuk, designed to help users stay focused & manage study sessions." orientation="top" colSpan={2} rowSpan={1} />
           <AppItem colSpan={2} rowSpan={1} mode="super-compact" name="FolioPage" tags={["Web", "Service", "NextJS", "Turso"]} videoLink="sd" link="https://foliopage.vercel.app" description="An actively developed portfolio platform for students and early-career developers, focused on simplifying the creation and showcasing of professional profiles with zero-cost hosting and minimal setup." />
           <AppItem name={"Su-Fumi"} mode="super-compact" tags={["CLi", "Desktop", "Windows", "Go"]} link="https://sufumi.vercel.app" description="A venture focused on building CLI tools that streamline developer workflows and improve productivity with modern web technologies." orientation="top" colSpan={2} rowSpan={1} />
